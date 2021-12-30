@@ -1,0 +1,1 @@
+export const ADD_IMAGE_RANDOM = "ADD_IMAGE_RANDOM";

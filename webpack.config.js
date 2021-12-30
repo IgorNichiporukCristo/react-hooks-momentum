@@ -11,14 +11,15 @@ module.exports = {
     port: 3000,
     static: "hot"
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /nodeModules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        exclude: /node_modules/,
+        use: ['babel-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
