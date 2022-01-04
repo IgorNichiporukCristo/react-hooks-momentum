@@ -1,15 +1,16 @@
-import React,{ useEffect } from "react"
+import React from "react"
 import './main.scss'
 import Background from "./Background/Background";
 import Clock from "./Clock/Clock";
+import Weather from "./Weather/Weather";
 
 
-const App = () => {
-    return (<div className="main-content">
+const Main = () => {
+    return (<div>
         <Clock />
-        <h3>Date1 : {new Date().toDateString()}</h3>
         <Background />
+        <Weather />
     </div>)
 }
 
-export default App
+export default Main

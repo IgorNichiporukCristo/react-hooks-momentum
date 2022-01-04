@@ -1,14 +1,12 @@
 import React,{ useState, useEffect } from 'react';
 import "./clock.scss";
 
-function Clock(){
+const Clock = () => {
   const [date, setDate] = useState(new Date());
   
   
   useEffect(() => {
-    const timerId = setInterval(
-      () => {setDate(new Date())}
-      , 1000);
+    const timerId = setInterval(() => {setDate(new Date())}, 1000);
     return () => {
       clearInterval(timerId);
     } 
@@ -16,7 +14,7 @@ function Clock(){
 
   return (
     <div  className='clock-block'>
-     <span>{date.toLocaleTimeString()}</span> 
+     <span className='clock-block__clock'>{date.toLocaleTimeString()}</span> 
     </div>
   );
 }
