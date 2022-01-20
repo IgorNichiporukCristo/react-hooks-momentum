@@ -1,0 +1,12 @@
+.todo-row {
+  background-color: blue;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}

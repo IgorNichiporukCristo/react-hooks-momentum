@@ -3,7 +3,6 @@ import { getImg } from "../../action/fetch_img";
 import { useDispatch, useSelector } from "react-redux";
 import './background.scss'
 
-
 const Background = () => {
   
   const dispatch = useDispatch();
@@ -13,9 +12,10 @@ const Background = () => {
   },[])
 
     return (
-      <div className="background">
-        <div className="background-image" style={{backgroundImage: `url(${img})`}}> </div>
-      </div>
+        <div className="background">
+          <div className="background-image" style={{backgroundImage: `url(${img})`}}> 
+          </div>
+        </div>
     )
 }
 
