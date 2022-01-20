@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./todo-form.scss"
 
 const TodoForm = (props) => {
   const [input, setInput] = useState(props.edit ? props.edit.value: "");
@@ -26,7 +27,7 @@ const TodoForm = (props) => {
   return (
     <form className="todo-form" onSubmit={ handleSubmit }>
       {props.edit ? (
-        <div>
+        <div className="form-edit">
           <input 
             type="text"
             className="todo-input edit" 
