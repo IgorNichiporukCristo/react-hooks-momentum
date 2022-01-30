@@ -16,17 +16,11 @@ const TodoContent = ({ todos, completeTodo, removeTodo, updateTodo }) => {
       id: null,
       value: ""
     })
-  }
-
-  if (edit.id) {
-    return <TodoForm edit={edit} onSubmit={submitUpdate}/>
-  }
+  };
 
   return todos.map((todo, index) => (
-    <div
-      className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
-      key={index}
-    >
+    (edit.id == todo.id ? <TodoForm edit={edit} onSubmit={submitUpdate}/>: 
+    (<div className={todo.isComplete ? 'todo-row complete' : 'todo-row'} key={index} >
       <div key={todo.id} onClick={() => completeTodo(todo.id)}>
         {todo.text}
       </div>
@@ -40,8 +34,8 @@ const TodoContent = ({ todos, completeTodo, removeTodo, updateTodo }) => {
          className='edit-icon'
         />
       </div>
-    </div>
+    </div>))
   ));
-};
+}
 
 export default TodoContent;

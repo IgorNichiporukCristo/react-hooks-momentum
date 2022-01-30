@@ -1,11 +1,23 @@
 .todo-row {
-  background-color: blue;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 85%;
+  height: 22px;
   margin-top: 5px;
-  padding: 6px;
+  padding: 14px;
+  background: linear-gradient(
+    90deg,
+    rgb(188, 212, 223) 0%,
+    rgb(194, 182, 206) 100%
+  );
+}
+.todo-row:nth-child(2n + 1){
+  background: linear-gradient(
+    90deg,
+    rgb(194, 182, 206) 0%,
+    rgb(188, 212, 223) 100%
+  );
 }
 .complete {
   text-decoration: line-through;

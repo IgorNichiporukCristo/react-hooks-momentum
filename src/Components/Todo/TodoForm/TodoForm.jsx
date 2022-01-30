@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./todo-form.scss"
+import "./todo-form.scss";
 
 const TodoForm = (props) => {
   const [input, setInput] = useState(props.edit ? props.edit.value: "");
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
 
   useEffect(() => {
-    inputRef.current.focus()
+    inputRef.current.focus();
   })
   
   const handleChange = e => {
-    setInput(e.target.value)
+    setInput(e.target.value);
   }
 
   const handleSubmit = e => {
@@ -21,7 +21,7 @@ const TodoForm = (props) => {
       text: input,
       isComplete: false
     })
-    setInput("")
+    setInput("");
   }
 
   return (
@@ -53,7 +53,7 @@ const TodoForm = (props) => {
       ) }
     
     </form>
-  )
+  );
 }
 
 export default TodoForm

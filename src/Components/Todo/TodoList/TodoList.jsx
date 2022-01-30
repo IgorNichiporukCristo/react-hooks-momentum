@@ -1,52 +1,60 @@
-import React, { useState } from "react"
-import TodoContent from "../TodoContent/TodoContent"
-import TodoForm from "../TodoForm/TodoForm"
-import "./todo-list.scss"
+import React, { useState } from "react";
+import TodoContent from "../TodoContent/TodoContent";
+import TodoForm from "../TodoForm/TodoForm";
+import { BsChevronDoubleRight } from 'react-icons/bs';
+import "./todo-list.scss";
 
-const TodoList = () => {
-  const [todos, setTodos] = useState([])
+const TodoList = ({ show, handleTodoShow }) => {
+  const [todos, setTodos] = useState([]);
 
   const addTodo = todo => {
     if(todo.text) {
-      setTodos([todo, ...todos])
+      setTodos([todo, ...todos]);
     } else{
-      return 
+      return ;
     }
   }
 
   const completeTodo = id => {
     let updateTodos = todos.map( todo => {
       if (todo.id === id) {
-        todo.isComplete =! todo.isComplete
+        todo.isComplete =! todo.isComplete;
       }
-      console.log(todo)
-      return todo
+      return todo;
     })
-    setTodos(updateTodos)
+    setTodos(updateTodos);
   }
+
   const updateTodo = (todoId, newValue) => {
     if (newValue.text) {
-      setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)))
+      setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
     }
-    return
+    return ;
   };
+
   const removeTodo = id => {
-    const removeArr = [...todos].filter(todo => todo.id != id)
-    setTodos(removeArr)
+    const removeArr = [...todos].filter(todo => todo.id != id);
+    setTodos(removeArr);
   }
 
   return(
-    <div className="todo-list">
-      <span>Todo</span>
+    <div className={show? "todo-list todo-list-show": "todo-list"}>
+      <div className="todo-list__title-close">
+        <span className="todo-list__title">Todo</span>
+        <BsChevronDoubleRight onClick={() => handleTodoShow()} className="todo-list__close" />
+      </div>
       <TodoForm onSubmit={addTodo}/>
-      <TodoContent 
-        todos={todos}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
-        updateTodo={updateTodo}
-      />
+      <div className="content-countainer-todo">
+        <TodoContent 
+          todos={todos}
+          completeTodo={completeTodo}
+          removeTodo={removeTodo}
+          updateTodo={updateTodo}
+        />
+      </div>
+     
     </div>
-  )
+  );
 }
 
 export default TodoList

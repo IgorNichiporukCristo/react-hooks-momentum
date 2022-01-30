@@ -14,7 +14,7 @@ const Clock = () => {
 
   return (
     <div  className='clock-block'>
-     <span className='clock-block__clock'>{date.toLocaleTimeString()}</span> 
+      <span className='clock-block__clock'>{date.toLocaleTimeString()}</span> 
     </div>
   );
 }

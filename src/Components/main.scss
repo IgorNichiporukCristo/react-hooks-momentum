@@ -1,5 +1,36 @@
-.main-content {
-  position: relative;
-  padding: 10px;
-  z-index: 3;
+.body {
+  background-color: blue;
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .main-content {
+    width: 97%;
+    height: 97%;
+    position: relative;
+    z-index: 3;
+    .main__todo-button-show {
+      height: 30px;
+      width: 70px;
+      padding: 10px;
+      font-size: 20px;
+      background-color: rgb(194, 182, 206);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      z-index: 0;
+      transition: all 0.7s linear;
+      transform: translateX(0%);
+    } 
+    .todo-button-show{
+      transition: all 0.2s linear;
+      transform: translateX(120%);
+    }
+  }
 }

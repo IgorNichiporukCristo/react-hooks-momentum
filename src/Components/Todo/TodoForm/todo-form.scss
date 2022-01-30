@@ -3,7 +3,7 @@
     border-radius: 5px 0 0 5px;
     border: 2px solid rgb(194, 182, 206);
     outline: none;
-    width: 200px;
+    width: 236px;
     background: transparent;
   }
 
@@ -13,24 +13,9 @@
     border: none;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    background: linear-gradient(
-      90deg,
-      rgb(194, 182, 206) 0%,
-      rgb(188, 212, 223) 100%
-    );
+    background: rgb(194, 182, 206);
   }
   
-.todo-input.edit {
-    border: 2px solid rgb(188, 212, 223);
-  }
-  
-.todo-button.edit {
-    background: linear-gradient(
-      90deg,
-      rgb(188, 212, 223) 0%,
-      rgb(194, 182, 206) 100%
-    );
-}
 .form-edit{
     margin-top: 5px;
 }

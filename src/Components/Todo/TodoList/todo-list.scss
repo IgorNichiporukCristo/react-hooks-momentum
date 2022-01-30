@@ -1,6 +1,47 @@
 .todo-list{
   display: flex;
+  background-color: rgba(222, 228, 235, 0.2);
   flex-direction: column;
   width: 400px;
+  height: 500px;
   align-items: center;
+  position: fixed;
+  z-index: 3;
+  bottom: 10px;
+  right: 10px;
+  transition: all 0.7s linear;
+  transform: translateX(110%);
+  .todo-list__title-close{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    position: relative;
+    width: 100%;
+    .todo-list__title{
+      font-weight: bold;
+      color: blanchedalmond;
+    }
+    .todo-list__close{
+      position: absolute;
+      right: 10px;
+    }
+  } 
+  .content-countainer-todo{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    margin-top: 10px;
+  } 
+  .content-countainer-todo::-webkit-scrollbar {
+      width: 0px;
+  }
+}
+.todo-list-show{
+  transition: all 0.7s linear;
+  transform: translateX(0%);
 }
