@@ -24,7 +24,7 @@ const Wearther = () => {
     
   const handleSubmitWeather = e => {
     e.preventDefault();
-    fetchData(url)
+    fetchData(url);
   }  
 
   return (

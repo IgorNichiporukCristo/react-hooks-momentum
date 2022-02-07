@@ -1,12 +1,12 @@
-import React,{ useEffect } from "react"
+import React,{ useEffect } from "react";
 import { getImg } from "../../action/fetch_img";
 import { useDispatch, useSelector } from "react-redux";
-import './background.scss'
+import './background.scss';
 
 const Background = () => {
   
   const dispatch = useDispatch();
-  const img = useSelector(state => state.image)
+  const img = useSelector(state => state.image);
   useEffect(() =>{
     dispatch(getImg);
   },[])
@@ -19,4 +19,4 @@ const Background = () => {
     )
 }
 
-export default Background
+export default Background;

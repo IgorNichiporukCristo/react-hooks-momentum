@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
-  const [status, setStatus] = useState({
-    data: undefined,
-    loading: false,
-    error: undefined
-  });
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState();
+  const [error, setError] = useState();
 
   function fetchData(url) {
     setStatus ({ loading: true });
@@ -13,23 +11,25 @@ const useFetch = (url) => {
       .then((res) => res.json())
       .then((res) => { 
         if(res.cod != 404){
-          setStatus({ loading: false, data: res })
+          setLoading(false);
+          setData(res);
         } else{
           throw new Error("invalid city");
         }
       })
       .catch((error) => {
-        setStatus({ loading: false, error: error })
+        setLoading(false);
+        setError(error);
     })
   }
 
   useEffect(() => {
     if(url) {
-      fetchData(url)
+      fetchData(url);
     }    
   }, [])
 
-  return { ...status, fetchData }
+  return { data, loading, error, fetchData };
 }
 
 export default useFetch;
