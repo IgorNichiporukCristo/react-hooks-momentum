@@ -6,7 +6,7 @@ const useFetch = (url) => {
   const [error, setError] = useState();
 
   function fetchData(url) {
-    setStatus ({ loading: true });
+    setLoading (true);
     fetch(url)
       .then((res) => res.json())
       .then((res) => { 

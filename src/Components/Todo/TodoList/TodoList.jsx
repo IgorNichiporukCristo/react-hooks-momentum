@@ -5,6 +5,7 @@ import { BsChevronDoubleRight } from 'react-icons/bs';
 import "./todo-list.scss";
 
 const TodoList = ({ show, handleTodoShow }) => {
+  console.log("todolist")
   const [todos, setTodos] = useState([]);
 
   const addTodo = todo => {

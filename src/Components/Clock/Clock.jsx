@@ -2,6 +2,7 @@ import React,{ useState, useEffect } from 'react';
 import "./clock.scss";
 
 const Clock = () => {
+  console.log("clock")
   const [date, setDate] = useState(new Date());
   
   

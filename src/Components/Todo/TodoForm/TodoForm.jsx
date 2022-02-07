@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "./todo-form.scss";
 
 const TodoForm = (props) => {
+  console.log("TodoForm")
+
   const [input, setInput] = useState(props.edit ? props.edit.value: "");
   const inputRef = useRef(null);
 

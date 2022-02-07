@@ -1,4 +1,4 @@
-import React,{ useState, useEffect, useCallback } from 'react';
+import React,{ useState, useCallback } from 'react';
 import "./weather.scss";
 import { KEY_WEATHER } from '../../constans';
 import useFetch from '../../hooks/useFetch';
@@ -12,6 +12,7 @@ const definitionCity = () => {
 };
 
 const Wearther = () => {
+  console.log("Weather")
   const [city, setCity] = useState(() => { return definitionCity()});
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=${KEY_WEATHER}&units=metric`;
   const { data, loading, error, fetchData } = useFetch(url);  
@@ -38,4 +39,4 @@ const Wearther = () => {
     </div>
   );
 }
-export default Wearther;
+export default React.memo(Wearther);

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import './background.scss';
 
 const Background = () => {
+  console.log("background")
   
   const dispatch = useDispatch();
   const img = useSelector(state => state.image);

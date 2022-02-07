@@ -5,6 +5,7 @@ import TodoForm from '../TodoForm/TodoForm';
 import "./todo-content.scss";
 
 const TodoContent = ({ todos, completeTodo, removeTodo, updateTodo }) => {
+  console.log("TodoContent")
   const [edit, setEdit] = useState({
     id: null,
     value: ''
